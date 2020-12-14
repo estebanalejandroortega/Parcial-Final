@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Categorias</title>
+  </head>
+</html>
+{% extends 'layouts/base.html'%}
+{% block title %}
+    Categorias
+{% endblock %}
+{% block content %}
+
+<center>
+    <h1>Bienvenido</h1>
+    <table class="table table-striped">
+        <thead>
+            <th>ID</th>
+            <th>Nombre de Categoría</th>
+            <th></th>
+        </thead>
+        <tbody>
+            {% for categoria in categorias %}
+            <tr>
+                <td>{{categoria[0]}}</td>
+                <td>{{categoria[1]}}</td>
+                <td>
+                    <a class="btn btn-success2" href="{{url_for('editar_categoria',id=categoria[0])}}">Editar</a>
+                    <a class="btn btn-danger" href="{{url_for('eliminar_categoria',id=categoria[0])}}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a class="btn btn-success" href="{{url_for('crear_categoria')}}">Crear Categoria</a>
+</center>
+{% endblock %}
