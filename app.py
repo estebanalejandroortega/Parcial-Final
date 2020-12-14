@@ -1,3 +1,8 @@
+'''
+integrantes: 
+ESTEBAN ALEJANDRO ORTEGA ROSERO
+DAVID ALEXANDER VIVAS BOTINA
+'''
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 import sqlite3
 app = Flask(__name__)
